@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+
+{% block admin %}
+    <ol class="breadcrumb">
+        <li><a href="/admin">管理首页</a></li>
+        <li class="active">分类列表</li>
+    </ol>
+    <div class="page-header">
+        <h2><small>分类列表</small></h2>
+    </div>
+    <table class="table table-hover table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>分类名称</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for file in users  %}
+                <tr>
+                    <td>{{ file.listname }}</td>
+                    <td>
+                        <a href="/admin/amend?id={{ file._id.toString() }}">修改</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+                        <a href="/admin/delete?id={{ file._id.toString() }}">删除</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% include 'pager.html' %}
+{% endblock %}

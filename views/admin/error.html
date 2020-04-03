@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block admin %}
+    <ol class="breadcrumb">
+        <li><a href="/admin">管理首页</a></li>
+        <li class="active">分类添加</li>
+    </ol>
+    <div class="page-header">
+        <h2><small>错误提示</small></h2>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">你的错误提示为：{{ msg }}</div>
+        <div class="panel-footer">
+            <a href="/admin/addclassify">点击重新添加</a>
+        </div>
+    </div>
+{% endblock %}

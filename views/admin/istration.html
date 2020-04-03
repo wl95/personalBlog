@@ -1,0 +1,43 @@
+<!-- 继承layout.html -->
+{% extends 'layout.html' %}
+
+{% block admin %}
+    <ol class="breadcrumb">
+        <li><a href="/admin">管理首页</a></li>
+        <li class="active">用户列表</li>
+    </ol>
+    <div class="page-header">
+        <h2><small>用户列表管理</small></h2>
+    </div>
+    <table class="table table-hover table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>用户名</th>
+                <th>密码</th>
+                <th>创建时间</th>
+                <th>最近登陆时间</th>
+                <th>是否是管理员</th>
+            </tr>
+        </thead>
+       <tbody>
+           {% for file in users %}
+            <tr>
+                <td>{{file._id.toString()}}</td>
+                <td>{{file.username}}</td>
+                <td>{{file.password}}</td>
+                <td>{{file.createTime.toString()}}</td>
+                <td>{{file.updateTime.toString()}}</td>
+                <td>
+                    {% if file.isAdmin %}
+                    是
+                    {% else %}
+                    否
+                    {% endif %}
+                </td>
+            </tr>
+           {% endfor %}
+       </tbody>
+    </table>
+    {% include 'pager.html' %}
+{% endblock %}

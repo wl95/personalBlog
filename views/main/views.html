@@ -1,0 +1,67 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="comment comment_fullText">
+        <h1>{{ content.headline }}</h1>
+        <p>作者:
+            <span class="colInfo">{{userInfo.username}}</span>
+            -时间:
+            <span class="colInfo">{{ content.updateTime | date('Y年m月d日 H:i:s',-8*60) }}</span>
+            -阅读:
+            <span class="colInfo">{{ content.views }}</span>
+            -评论:
+            <span class="colInfo">9</span>
+        </p>
+        <dfn>
+            <p>{{content.content}}</p>
+        </dfn>
+    </div><a href=""></a> 
+    <div class="comment">
+        <div class="NoLogin_prompt">
+            <div class="tlt_comment">评论</div>
+            <div class="prompt_num">一共有<i>0</i>条评论</div>
+        </div>
+        {% if !userInfo.username %}
+            <button class="comment_btn">你还没有登陆，请先登录</button>
+            
+        {% else %}
+            <div class="import_comment">
+                <textarea class="textarea_comment"></textarea>
+                <button class="submit_comment">提交评论</button>
+            </div>
+        {% endif %}
+
+        <span class="tishi">还没有留言</span>
+
+        <div class="content_comment">
+            <div class="comments">
+                <div class="information">
+                    <div class="headPortrait">
+                        <div class="headPortrait_pic"><img src="/public/images/tou.jpg" alt=""></div>
+                        <strong>{{userInfo.username}}</strong>
+                    </div>
+                    <span class="colInfo">{{ content.updateTime | date('Y年m月d日 H:i:s',-8*60) }}</span>
+                </div>
+                <p class="comment_content">
+                    卡觉得那是多久啊老师的就拿快递哪家
+                </p>
+            </div>
+            <div class="comments">
+                <div class="headPortrait_pic"><img src="/public/images/tou.jpg" alt=""></div>
+                
+                <div class="information">
+                    <div class="headPortrait">
+                        <p>
+                            <strong>{{userInfo.username}}</strong>
+                            <i>[北京市网友]</i>
+                        </p>
+                        <p class="colInfo">{{ content.updateTime | date('Y年m月d日 H:i:s',-8*60) }}</p>
+                    </div>
+                    <div class="comment_content">
+                        卡觉得那是多久啊老师的就拿快递哪家
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+{% endblock %}

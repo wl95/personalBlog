@@ -1,0 +1,36 @@
+{% extends 'layout.html' %}
+
+{% block admin %}
+    <ol class="breadcrumb">
+        <li><a href="/admin">管理首页</a></li>
+        <li class="active">文章添加</li>
+    </ol>
+    <div class="page-header">
+        <h2><small>内容添加</small></h2>
+    </div>
+
+    <form method="post" role="form">
+        <div class="form-group">
+            <label for="exampleInputEmail1">分类:</label>
+            <select class="form-control" name="category">
+                {% for file in lists %}
+                    <option value="{{ file._id.toString() }}">{{ file.listname }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">标题:</label>
+            <input type="text" class="form-control" name="headline" id="exampleInputEmail1" placeholder="请输入内容标题" name="stcname">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">简介:</label>
+            <textarea class="form-control" rows="3" placeholder="请输入内容简介" name="intro"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">内容:</label>
+            <textarea class="form-control" rows="5"  placeholder="请输入内容" name="content"></textarea>
+        </div>
+        <button type="submit" class="btn btn-default">提交</button>
+    </form>
+
+{% endblock %}

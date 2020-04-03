@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>不要迷恋哥</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="format-detection" content="telephone=no,email=no,address=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <link rel="stylesheet" href="/public/fonts/iconfont.css">
+    <link rel="stylesheet" href="/public/bootstrap/bootstrap-theme.css">
+    <link rel="stylesheet" href="/public/bootstrap/bootstrap.css">
+    <link rel="stylesheet" href="/public/css/animate.css">
+    <link rel="stylesheet" href="/public/css/reset.css">
+    <link rel="stylesheet" href="/public/css/main.css">
+</head>
+<body>
+    <div class="wrap">
+        <header class="header">
+            <a href="javascript:;"><img src="/public/images/00002637.png" alt=""></a>
+        </header>
+        <nav class="nav">
+            <div class="nav_list">
+                {%  if listId === '' %}
+                    <a href="/" class="nav_active">首页</a>
+                {% else %}
+                <a href="/">首页</a>
+                {% endif %}
+                {% for file in lists %}
+                    {%  if  file._id.toString() === listId %}
+                        <a href="?listId={{file._id.toString()}}" class="nav_active">{{ file.listname }}</a>
+                    {% else %}
+                        <a href="?listId={{file._id.toString()}}">{{ file.listname }}</a>
+                    {% endif %}
+                {% endfor %}
+                <div class="nav_log">
+                    {%if userInfo.username_id%}
+                    <!-- 已登录用户信息 -->
+                    <div class="logined">
+                        <div class="headPortrait">
+                            <div class="headPortrait_pic"><img src="/public/images/tou.jpg" alt=""></div>
+                            <strong>{{userInfo.username}}</strong>
+                            <span class="iconfont">&#xe96d;</span>
+                        </div>
+                        <div class="family">
+                            <div class="family_self">
+                                <span>你好，管理员</span> 
+                                <a href="/admin">进入管理</a>
+                            </div>
+                            <div class="family_line">修改账号信息</div>
+                            <div class="family_line"></div>
+                            <a href="javascript:;" class="logOut">退出</a>
+                        </div>
+                        {% if userInfo.isAdmin %}
+                        {% else %}
+                        <p class="family">
+                            <span>你好，欢迎光临我的博客</span>
+                        </p>
+                        {% endif %}
+                       <!--  <a href="javascript:;" class="logOut">退出</a> -->
+                    </div>
+                    {%else%}
+                    <span class="nav_login" data-toggle="modal" data-target=".bs-example-modal-login">登陆</span>
+                    <span class="nav_register" data-toggle="modal" data-target=".bs-example-modal-register">注册</span>
+                    {%endif%}
+                </div>
+            </div>
+        </nav>
+        <article class="article">
+            <div class="article_left">
+                <!-- 首页内容 -->
+                {% block content %}
+                {% endblock %}
+               
+                {% if count >= 1 %}
+                <div class="page">
+                    {% if  page <= 1 %}
+                        <span>没有上一页了</span>
+                    {% else %}
+                        <a href="?listId={{listId}}&page={{ page-1 }}">上一页</a>
+                    {% endif %}
+                    {% if fewPages > 1 %}
+                    <p class="page_fewPages">
+                        <span>{{page}}</span>/<span>{{ fewPages }}</span>
+                    </p>
+                    {% endif %}
+                    {% if  fewPages <= page %}
+                        <span>没有下一页了</span>
+                    {% else %}
+                        <a href="?listId={{listId}}&page={{ page+1 }}">下一页</a>
+                    {% endif %}
+                </div>
+                {% else %}
+                <div class="page jsct">该分类主淫还没发表</div>
+                {% endif %}
+            </div>
+            <div class="article_right" >
+                <!-- <div class="userinfo disby">
+                    <div class="userinfo_top">
+                        <h2><span>社区</span></h2>
+                    </div>
+                    <div class="name">
+                        <span>我的课堂</span>
+                        <span>我的家园</span>
+                    </div>
+                </div> -->
+            </div>
+        </article>
+
+        <footer class="copyright textCenter">   
+            Copyright © naocanxin.com 版权所有 | 京ICP备08102442号
+        </footer>
+        
+        {% include 'popupbox.html' %}
+    </div>
+    <script src="/public/js/jquery-2.1.1.min.js"></script>
+    <script src="/public/js/bootstrap.js"></script>
+    <script src="/public/js/index.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,10 @@
+<!-- 继承layout.html -->
+{% extends 'layout.html' %}
+
+
+{% block admin %}
+    <div class="jumbotron" style="padding:30px 46px">
+        <h1><small>Hello, {{ userInfo.username }}!</small></h1>
+        <h2><small>欢迎光临我的博客,当前位置是后台管理</small></h2>
+    </div>
+{% endblock %}

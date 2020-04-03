@@ -1,0 +1,163 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+.wrap{
+    width: 100%;
+    height:100%;
+    overflow: hidden;
+}
+
+.navbar-default{
+    background: #fff;
+}
+
+.navbar{
+    margin-bottom: 0;
+}
+
+.pic{
+    height:150px;
+    margin-top:51px;
+    overflow: hidden;
+}
+
+.pic > img{
+    width: 100%;
+    height:100%;
+}
+
+.nav > li a.active{
+    color: #f57d05;
+}
+
+.h3_top{
+    color: #ff9c00;
+    padding:10px 0 4px 0;
+}
+
+.h3_top > h3{
+    width: 510px;
+    margin: 15px auto;
+    font-size: 27px;
+    position: relative;
+}
+
+@media (min-width: 768px){
+
+    .h3_top >h3:before,.h3_top >h3:after{
+        content: '';
+        position: absolute;
+        top:50%;
+        width: 60px;
+        height:1px;
+        background: #ceb074;
+    }
+
+    .h3_top >h3:before{
+        left: -60px;
+    }
+    .h3_top >h3:after{
+        right: -60px;
+    }
+}
+
+.h4_top > h4{
+    color: #6d6d6d;
+    font-size: 14px;
+}
+
+.likes h4{
+    line-height: 38px;
+    font-size: 24px;
+    background: #68c4ab;
+    color: #fff;
+}
+
+.likes button{
+    width: 100%;
+    background: linear-gradient(to left,#f43a4f,#f67d24);
+    color: #fff;
+    font-size: 18px;
+}
+
+.row > div{
+	padding: 0 10px;
+}
+
+.row > div > div{
+	box-shadow: 0 0 5px 0px #ccc;
+	border-radius: 5px;
+}
+
+.row > div > div >ul{
+	padding: 0 5px;
+	line-height: 35px;
+}
+
+.row > div > div >ul>li{
+	width: 80%;
+	white-space: nowrap;
+	margin: 0 auto;
+	border-bottom: 1px solid #eee;
+}
+
+.row > div > div >ul>li>span{
+	color: #8b56d0;
+	font-weight: bold;
+	padding-right: 3px;
+}
+
+.row > div > div >ul>li:last-child{
+	border-bottom: none;
+}
+
+.row > div > div h2{
+	padding-top: 15px;
+	margin-bottom: 5px;
+}
+
+.row > div > div > span{
+	font-weight: bold;
+}
+
+.row > div > div h4{
+	margin-top: 5px;
+}
+
+.con_text{
+	width: 100%;
+	margin-top: 60px;
+	background: #eeeeee;
+	padding: 15px 0;
+}
+
+.con_text > .row{
+	box-sizing: border-box;
+	margin: 0;
+}
+
+.con_text > .row>div{
+	padding: 0 16px;
+}
+
+.footer{
+	background: #35302d;
+	overflow: hidden;
+	padding-top: 25px;
+}
+
+.footer_tail{
+    color: #86817e;
+    padding-top: 15px;
+}
+
+.footer_bar ul li a{
+	color: #fff;
+}
+
+.footer_list_right > ul > li{
+	margin-left: 8px;
+}

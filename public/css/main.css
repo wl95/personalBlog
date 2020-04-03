@@ -1,0 +1,413 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+body {
+    margin: 0px;
+    background: #ebebeb;
+    font-family: '微软雅黑';
+    font-size: 14px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: normal;
+}
+
+.wrap{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.header{
+    width: 100%;
+    height: 185px;
+    text-align: center;
+    background: url(../images/xin.jpg) no-repeat;
+    background-size: 100% 185px;
+}
+
+.header > a{
+    display: inline-block;
+    width: 185px;
+    padding: 43.4px 0;
+}
+
+.header > a >img{
+    width: 100%;
+    height: 100%;
+}
+
+.nav{
+    position: sticky;
+    left: 0;
+    top: 0;
+    background: rgb(253, 253, 253);
+    box-shadow: 2px 0 3px 3px #eee;
+}
+
+.nav_list{
+    width: 1140px;
+    text-align: center;
+    line-height: 45px;
+    font-size: 14px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.nav_log{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.nav_log>span{
+    margin-right: 10px; 
+    cursor: pointer;
+    color: #fc2fa7;
+}
+
+.nav_list >a{
+    display: inline-block;
+    padding: 0 15px;
+    cursor: pointer;
+    color: #9d32da;
+    border-bottom: 2px solid transparent;
+}
+
+.nav_list >a.nav_active{
+    border-bottom: 2px solid #f60;
+    color:#40104c;
+}
+
+.nav_list >a:hover {
+    text-decoration: none;
+    border-bottom: 2px solid #f60;
+    color:#40104c;
+}
+
+.article {
+    width: 1140px;
+    overflow: hidden;
+    margin: 0 auto;
+    padding: 30px 0;
+}
+
+.article_left{
+    width: 65%;
+    margin: 0 auto;
+}
+
+.comment{
+    background: #fff;
+    margin-bottom: 30px;
+    padding: 40px 35px 20px;
+    border-radius: 4px;
+}
+
+.comment > p{
+    color: #070008;
+    letter-spacing: 1px;
+}
+
+.colInfo{
+    color: #46b9d8 !important;
+}
+
+.article_left,.comment > h1{
+    text-align: center;
+}
+
+.comment > h1{
+    font-size: 25px;
+    line-height: 55px;
+}
+
+dfn,.btn{
+    display: block;
+    text-align: left;
+    font-style: normal;
+}
+
+dfn {
+    padding: 20px 10px;
+    font-size: 18px;
+}
+
+.btn > a {
+    display: inline-block;
+    width: 100px;
+    line-height: 35px;
+    background: #c427eb;
+    color: #fff;
+    text-align: center;
+    border-radius:4px;
+}
+
+.article_right {
+    width: 310px;
+    float: left;
+    display: none;
+    margin-left: 50px;
+}
+
+/* 未登录提示  评论页面 start  */
+
+.NoLogin_prompt{
+    display: flex;
+    justify-content: space-between;
+}
+
+.tishi{
+    display: block;
+    text-align: left;
+}
+
+.comment_btn  {
+    width: 97%;
+    background: #c427eb;
+    color: #fff;
+    margin: 10px 0;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    line-height: 24px;
+    font-size: 12px;
+    border-radius: 3px;
+}
+
+.tlt_comment,.tishi{
+    font-weight: bold;
+}
+
+.import_comment{
+    width: 100%;
+    padding: 10px 0;
+    text-align: right;
+}
+
+.textarea_comment{
+    width: 100%;
+    height: 58px;
+    padding: 3px;
+    border-radius: 5px;
+    font-size: 14px;
+    border-color: #c427eb;
+}
+
+.submit_comment{
+    width: 100px;
+    height: 28px;
+    background: #cb04fd;
+    color: #fff;
+    border-radius: 28px;
+    border: none;
+    cursor: pointer;
+}
+
+.submit_comment:hover{
+    background-color:#d677f0; 
+}
+
+/* 未登录提示 end */
+
+.userinfo,.log_in,.register{
+    padding: 4px 15px 7px;
+}
+
+.userinfo h2{
+    height: 30px;
+}
+
+.userinfo h2>span{
+    font-size: 16px;
+    padding: 0 15px 3px 2px;
+    border-bottom: 2px solid rgb(247, 103, 7);
+}
+
+.disb,.disby{
+    display: block;
+}
+
+.disn{
+    display: none;
+}
+
+.headPortrait{
+    height: 45px;
+    display: flex;
+    align-items: center;
+}
+
+.headPortrait >span{
+     margin-left: 6px;
+}
+
+.headPortrait_pic{
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.headPortrait_pic>img{
+    width: 100%;
+    vertical-align:initial;
+    height: 100%;
+}
+
+.headPortrait > strong{
+    margin-left: 15px;
+    outline: none;
+    text-align: center;
+}
+
+.logined{
+    position: relative;
+}
+
+.logined .family{
+    width: 170px;
+    background: #fff;
+    position: absolute;
+    left: 0;
+    top: 46px;
+    line-height: 23px;
+    padding: 5px;
+}
+
+.logined .family_self>span{
+    color: #c427eb;
+}
+
+.logined .family_self>a{
+    color: #46b9d8;
+    padding-left: 5px;
+    text-decoration: underline;
+    cursor: pointer;
+}   
+
+.logined >a{
+    text-decoration: underline;
+    line-height: 34px;
+}
+
+.name > span{
+    display: block;
+    padding-top: 8px;
+    cursor: pointer;
+    color: #391244;
+}
+
+/* page分页 start */
+
+.page{
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    padding: 14px 20px;
+    border-radius: 4px;
+    margin-top: 30px;
+}
+
+.page>span,.headPortrait > select,.headPortrait{
+    cursor: pointer;
+}
+
+.page_fewPages{
+    letter-spacing: 3px;
+}
+
+/* page分页 start */
+
+/* 右侧登陆 */
+
+
+.line{
+    display: flex;
+    align-items: center;
+    height: 30px;
+    margin-top: 14px;
+}
+
+.line >span{
+    width: 60px;
+    text-align: right;
+    font-size: 14px;
+}
+
+.line input{
+    width: 200px;
+    height: 34px;
+    margin-left: 3px;
+    padding-left: 7px;
+    border: 1px solid #ccc;
+}
+
+.line >a{
+    display: inline-block;
+    width: 212px;
+    margin-left: 60px;
+    text-align: center;
+    height: 30px;
+    background-color: rgb(247, 103, 7);
+    color: #fff;
+    line-height: 28px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.log_in>p,.register >p{
+    text-align: right;
+    margin-right: 10px;
+    line-height: 37px;
+}
+
+.copyright{
+    line-height: 70px;
+    color: #f3f3f3;
+    background: #40104c;
+}
+
+.textCenter{
+    text-align: center;
+}
+
+.hint{
+    line-height: 30px;
+    text-align: center;
+    color: #f60;
+}
+
+.jsct{
+    justify-content: center;
+    color: #aaa;
+}
+
+.modal-dialog{
+    margin-top: 6%;
+}
+
+/* 评论内容 */
+
+.information{
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment_content{
+    text-align: left;
+    padding-top: 5px;
+}
+
+.comments{
+    padding: 20px 0;
+    border-bottom: 1px dashed #ddd;
+}

@@ -1,0 +1,57 @@
+{% block popup %}
+<!-- 登陆弹出 -->
+<div class="alert_login">
+    <!-- 登陆 -->
+    <div class="modal fade bs-example-modal-login" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content userinfo log_in animated fadeInDown">
+            <h2><span>登陆</span></h2>
+            <div class="line">
+                <span>用户名:</span>
+                <input type="text" name="logInUser"placeholder="请输入用户名/手机号">
+            </div>
+            <div class="line">
+                <span>密码:</span>
+                <input type="password" name="logInPassword" placeholder="请输入密码">
+            </div>
+            <div class="line">
+                <a class="submit_btn">登陆</a>
+            </div>
+            <p>
+                <span>还没注册？</span>
+                <a href="javascript:;" class="registerBtn">马上注册</a>
+            </p>
+            <div class="hint"></div>
+        </div>
+    </div>
+    </div>
+
+    <!-- 注册 -->
+    <div class="modal fade bs-example-modal-register" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content userinfo register animated fadeInUp">
+                <h2><span>注册</span></h2>
+                <div class="line">
+                    <span>用户名:</span>
+                    <input type="text" name="username" placeholder="请输入用户名/手机号">
+                </div>
+                <div class="line">
+                    <span>密码:</span>
+                    <input type="password" name="password" placeholder="请输入密码">
+                </div>
+                <div class="line">
+                    <span>确认密码:</span>
+                    <input type="password" name="repassword" placeholder="请再次输入密码">
+                </div>
+                <div class="line">
+                    <a class="submit_btn">注册</a>
+                </div>
+                <p>
+                    <span>已有账号</span>
+                    <a href="javascript:;" class="logInBtn">马上登陆</a>
+                </p>
+                <div class="hint"></div>
+            </div>
+        </div>
+    </div>
+</div>

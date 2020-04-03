@@ -1,0 +1,11 @@
+<nav class="container">
+    <ul class="pager">
+        <li>
+            共{{ count }}条数据，每页显示{{ limit }}条，一共{{ fewPages }}页，当前页是第{{ page }}页
+        </li>
+        {% if fewPages > 1 %}
+        <li class="previous"><a href="/admin/{{pageUrl}}?page={{(page-1)*1 }}"><span aria-hidden="true">&larr;</span> 上一页</a></li>
+        <li class="next"><a href="/admin/{{pageUrl}}?page={{(page+1)*1}}">下一页<span aria-hidden="true">&rarr;</span></a></li>
+        {% endif %}
+    </ul>
+</nav>
